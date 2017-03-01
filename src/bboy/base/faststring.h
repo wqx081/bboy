@@ -6,6 +6,8 @@
 #define BBOY_BASE_FASTSTRING_H_
 
 #include <string>
+#include <glog/logging.h>
+
 #include "bboy/gbase/dynamic_annotations.h"
 #include "bboy/gbase/macros.h"
 #include "bboy/gbase/strings/fastmem.h"
@@ -100,15 +102,39 @@ class faststring {
   size_t size() const { return len_; }
   size_t capacity() const { return capacity_; }
 
-  const uint8_t* data() const;
-  uint8_t* data();
-  const uint8_t& at(size_t i) const;
+  const uint8_t* data() const {
+    return &data_[0];
+  }
 
-  const uint8_t& operator[](size_t i) const;
-  uint8_t& operator[](size_t i);
+  uint8_t* data() {
+    return &data_[0];
+  }
 
-  void assign_copy(const uint8_t* src, size_t len);
-  void assign_copy(const std::string& src);
+  const uint8_t& at(size_t i) const {
+    DCHECK(i >= 0 && i < length());
+    return data_[i];
+  }
+
+  const uint8_t& operator[](size_t i) const {
+    DCHECK(i >= 0 && i < length());
+    return data_[i];
+  }
+
+  uint8_t& operator[](size_t i) {
+    DCHECK(i >= 0 && i < length());
+    return data_[i];
+  }
+
+  void assign_copy(const uint8_t* src, size_t len) {
+    len_ = 0;
+    resize(len);
+    memcpy(data(), src, len);
+  }
+
+  void assign_copy(const std::string& src) {
+    assign_copy(reinterpret_cast<const uint8_t*>(src.c_str()),
+                len_);
+  }
   
   std::string ToString() const {
     return std::string(reinterpret_cast<const char*>(data_), len_);

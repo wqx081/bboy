@@ -5,7 +5,7 @@ CXXFLAGS += -std=c++11 -Wall -Werror -Wno-sign-compare -Wno-deprecated -g -c -o
 ANT_LIBS := $(SRC_PREFIX)/base/libbase.a $(SRC_PREFIX)/gbase/libgbase.a
 
 TEST_LIBS := -L/usr/local/lib -lgtest -lgtest_main -lpthread
-COMMON_LIBS := -lglog -lgflags -levent  -lpthread -lssl -lcrypto -lz -lev -lsasl2 -lpcre \
+COMMON_LIBS := -lglog -lgflags -lpthread -lssl -lcrypto -lz -lev -lsasl2 -lpcre \
 	-lprotobuf -lprotoc
 
 CXX=g++

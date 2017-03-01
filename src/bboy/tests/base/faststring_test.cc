@@ -52,4 +52,13 @@ TEST(faststring, PushBack) {
   EXPECT_TRUE(str.length() == 2);
 }
 
+TEST(faststring, Access) {
+  faststring str;
+  str.push_back('h');
+  str.push_back('i');
+
+  EXPECT_EQ('h', str[0]);
+  EXPECT_EQ('i', str[1]);
+}
+
 } // namespace bb

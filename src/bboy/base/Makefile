@@ -5,7 +5,15 @@ CXXFLAGS += -std=c++11 -Wall -Werror -Wno-sign-compare -Wno-deprecated -g -c -o
 CXX=g++
 
 CPP_SOURCES :=  \
-	faststring.cc
+	errno.cc \
+	malloc.cc \
+	monotime.cc \
+	faststring.cc \
+	slice.cc \
+	status.cc \
+	\
+	net/net_util.cc \
+	net/sockaddr.cc \
 
 CPP_OBJECTS := $(CPP_SOURCES:.cc=.o)
 
