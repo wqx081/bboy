@@ -13,12 +13,21 @@ CPP_SOURCES :=  \
 	slice.cc \
 	status.cc \
 	status_callback.cc \
+	path_util.cc \
+	env.cc \
+	env_posix.cc \
+	\
+	json/jsonreader.cc \
+	json/jsonwriter.cc \
 	\
 	net/net_util.cc \
 	net/sockaddr.cc \
 	net/socket.cc \
+	\
 	thread/thread.cc \
+	thread/threadlocal.cc \
 	thread/threadpool.cc \
+	\
 	sync/mutex.cc \
 	sync/condition_variable.cc \
 	sync/atomic.cc \
