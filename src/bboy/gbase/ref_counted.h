@@ -11,7 +11,7 @@
 #include "bboy/gbase/port.h"
 #include "bboy/gbase/threading/thread_collision_warner.h"
 
-namespace kudu {
+namespace bb {
 namespace subtle {
 
 typedef Atomic32 AtomicRefCount;
@@ -159,7 +159,7 @@ class RefCountedThreadSafe : public subtle::RefCountedThreadSafeBase {
 //
 template<typename T>
 class RefCountedData
-    : public kudu::RefCountedThreadSafe< kudu::RefCountedData<T> > {
+    : public bb::RefCountedThreadSafe< bb::RefCountedData<T> > {
  public:
   RefCountedData() : data() {}
   RefCountedData(const T& in_value) : data(in_value) {}
@@ -167,11 +167,11 @@ class RefCountedData
   T data;
 
  private:
-  friend class kudu::RefCountedThreadSafe<kudu::RefCountedData<T> >;
+  friend class bb::RefCountedThreadSafe<bb::RefCountedData<T> >;
   ~RefCountedData() {}
 };
 
-}  // namespace kudu
+}  // namespace bb
 
 //
 // A smart pointer class for reference counted objects.  Use this class instead

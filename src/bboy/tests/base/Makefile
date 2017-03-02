@@ -16,6 +16,9 @@ CPP_SOURCES := \
 CPP_OBJECTS := $(CPP_SOURCES:.cc=.o)
 
 tests := faststring_test \
+	socket_test \
+	thread_test \
+	threadpool_test \
 
 all: $(CPP_OBJECTS) $(tests)
 
@@ -33,6 +36,18 @@ all: $(CPP_OBJECTS) $(tests)
 
 
 faststring_test: faststring_test.o
+	@echo "  [LINK]  $@"
+	@$(CXX) -o $@ $< $(CPP_OBJECTS) $(ANT_LIBS) $(COMMON_LIBS) $(TEST_LIBS)
+
+socket_test: socket_test.o
+	@echo "  [LINK]  $@"
+	@$(CXX) -o $@ $< $(CPP_OBJECTS) $(ANT_LIBS) $(COMMON_LIBS) $(TEST_LIBS)
+
+thread_test: thread_test.o
+	@echo "  [LINK]  $@"
+	@$(CXX) -o $@ $< $(CPP_OBJECTS) $(ANT_LIBS) $(COMMON_LIBS) $(TEST_LIBS)
+
+threadpool_test: threadpool_test.o
 	@echo "  [LINK]  $@"
 	@$(CXX) -o $@ $< $(CPP_OBJECTS) $(ANT_LIBS) $(COMMON_LIBS) $(TEST_LIBS)
 

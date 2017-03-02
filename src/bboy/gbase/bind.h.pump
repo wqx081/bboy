@@ -73,7 +73,7 @@ $var MAX_ARITY = 7
 // need to crack open bind_internal.h.  On the other hand, it makes Bind()
 // harder to read.
 
-namespace kudu {
+namespace bb {
 
 $range ARITY 0..MAX_ARITY
 $for ARITY [[
@@ -148,6 +148,6 @@ $if ARITY > 0 [[, ]] $for ARG , [[p$(ARG)]]));
 
 ]]  $$ for ARITY
 
-}  // namespace kudu
+}  // namespace bb
 
 #endif  // BBOY_GBASE_BIND_H_

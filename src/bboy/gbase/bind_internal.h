@@ -21,7 +21,7 @@
 
 // During Chromium import, WeakPtr-related code was removed.
 
-namespace kudu {
+namespace bb {
 namespace internal {
 
 // See bboy/gbase/callback.h for user documentation.
@@ -2690,6 +2690,6 @@ struct BindState<Runnable, RunType, void(P1, P2, P3, P4, P5, P6,
 };
 
 }  // namespace internal
-}  // namespace kudu
+}  // namespace bb
 
 #endif  // BBOY_GBASE_BIND_INTERNAL_H_

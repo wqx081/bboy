@@ -16,7 +16,7 @@
 #define BASE_EXPORT
 #endif
 
-namespace kudu {
+namespace bb {
 
 // A generic interface to memory. This object is reference counted because one
 // of its two subclasses own the data they carry, and we need to have
@@ -145,6 +145,6 @@ class BASE_EXPORT RefCountedMallocedMemory : public RefCountedMemory {
   DISALLOW_COPY_AND_ASSIGN(RefCountedMallocedMemory);
 };
 
-}  // namespace kudu
+}  // namespace bb
 
 #endif  // BBOY_GBASE_REF_COUNTED_MEMORY_H_

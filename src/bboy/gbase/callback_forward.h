@@ -5,13 +5,13 @@
 #ifndef BBOY_GBASE_CALLBACK_FORWARD_H_
 #define BBOY_GBASE_CALLBACK_FORWARD_H_
 
-namespace kudu {
+namespace bb {
 
 template <typename Sig>
 class Callback;
 
 typedef Callback<void(void)> Closure;
 
-}  // namespace kudu
+}  // namespace bb
 
 #endif  // BBOY_GBASE_CALLBACK_FORWARD_H

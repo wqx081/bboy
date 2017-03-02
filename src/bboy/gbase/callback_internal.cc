@@ -4,7 +4,7 @@
 
 #include "bboy/gbase/callback_internal.h"
 
-namespace kudu {
+namespace bb {
 namespace internal {
 
 bool CallbackBase::is_null() const {
@@ -33,4 +33,4 @@ CallbackBase::~CallbackBase() {
 }
 
 }  // namespace internal
-}  // namespace kudu
+}  // namespace bb

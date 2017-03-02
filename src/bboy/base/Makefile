@@ -9,11 +9,26 @@ CPP_SOURCES :=  \
 	malloc.cc \
 	monotime.cc \
 	faststring.cc \
+	os-util.cc \
 	slice.cc \
 	status.cc \
+	status_callback.cc \
 	\
 	net/net_util.cc \
 	net/sockaddr.cc \
+	net/socket.cc \
+	thread/thread.cc \
+	thread/threadpool.cc \
+	sync/mutex.cc \
+	sync/condition_variable.cc \
+	sync/atomic.cc \
+	sync/semaphore.cc \
+	sync/rw_mutex.cc \
+	sync/rw_semaphore.cc \
+	sync/locks.cc \
+	sync/rwc_lock.cc \
+	sync/barrier.cc \
+	sync/countdown_latch.cc \
 
 CPP_OBJECTS := $(CPP_SOURCES:.cc=.o)
 

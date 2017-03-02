@@ -7,7 +7,7 @@
 #include <glog/logging.h>
 #include "bboy/gbase/threading/thread_collision_warner.h"
 
-namespace kudu {
+namespace bb {
 
 namespace subtle {
 
@@ -92,4 +92,4 @@ bool RefCountedThreadSafeBase::Release() const {
 
 }  // namespace subtle
 
-}  // namespace kudu
+}  // namespace bb

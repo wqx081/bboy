@@ -347,7 +347,7 @@ $var MAX_ARITY = 7
 //      Bind(&Foo, "test");
 //      Bind(&Bar, "test");  // This fails because ptr is not const.
 
-namespace kudu {
+namespace bb {
 
 // First, we forward declare the Callback class template. This informs the
 // compiler that the template only has 1 type parameter which is the function
@@ -431,6 +431,6 @@ $for ARG , [[typename internal::CallbackParamTraits<A$(ARG)>::ForwardType]]);
 // will be used in a lot of APIs with delayed execution.
 typedef Callback<void(void)> Closure;
 
-}  // namespace kudu
+}  // namespace bb
 
 #endif  // BBOY_GBASE_CALLBACK_H

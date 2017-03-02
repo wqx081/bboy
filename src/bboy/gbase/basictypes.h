@@ -1,7 +1,3 @@
-// Copyright 2001 - 2003 Google, Inc.
-//
-// Google-specific types
-
 #ifndef BASE_BASICTYPES_H_
 #define BASE_BASICTYPES_H_
 
