@@ -5,6 +5,7 @@ CXXFLAGS += -std=c++11 -Wall -Werror -Wno-sign-compare -Wno-deprecated -g -c -o
 CXX=g++
 
 CPP_SOURCES :=  \
+	pb_util.pb.cc \
 	errno.cc \
 	malloc.cc \
 	monotime.cc \
@@ -16,6 +17,7 @@ CPP_SOURCES :=  \
 	path_util.cc \
 	env.cc \
 	env_posix.cc \
+	user.cc \
 	\
 	json/jsonreader.cc \
 	json/jsonwriter.cc \

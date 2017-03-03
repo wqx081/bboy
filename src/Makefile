@@ -7,6 +7,7 @@ SRC_PREFIX=${CURDIR}/bboy
 all:
 	make -C ${SRC_PREFIX}/gbase
 	make -C ${SRC_PREFIX}/base
+	make -C ${SRC_PREFIX}/security
 	make -C ${SRC_PREFIX}/tests/base
 
 #	make -C ${SRC_PREFIX}/app/zk
@@ -21,6 +22,7 @@ all:
 clean:
 	make -C ${SRC_PREFIX}/gbase clean
 	make -C ${SRC_PREFIX}/base clean
+	make -C ${SRC_PREFIX}/security clean
 	make -C ${SRC_PREFIX}/tests/base clean
 
 #	make -C ${SRC_PREFIX}/common clean
