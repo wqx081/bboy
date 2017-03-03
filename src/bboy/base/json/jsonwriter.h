@@ -1,5 +1,5 @@
-#ifndef KUDU_UTIL_JSONWRITER_H
-#define KUDU_UTIL_JSONWRITER_H
+#ifndef BBOY_UTIL_JSONWRITER_H
+#define BBOY_UTIL_JSONWRITER_H
 
 #include <inttypes.h>
 
@@ -79,4 +79,4 @@ class JsonWriter {
 
 } // namespace bb
 
-#endif // KUDU_UTIL_JSONWRITER_H
+#endif // BBOY_UTIL_JSONWRITER_H

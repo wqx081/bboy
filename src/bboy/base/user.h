@@ -1,5 +1,5 @@
-#ifndef KUDU_UTIL_USER_H
-#define KUDU_UTIL_USER_H
+#ifndef BBOY_UTIL_USER_H
+#define BBOY_UTIL_USER_H
 
 #include <string>
 
@@ -13,4 +13,4 @@ Status GetLoggedInUser(std::string* user_name);
 
 } // namespace bb
 
-#endif // KUDU_UTIL_USER_H
+#endif // BBOY_UTIL_USER_H

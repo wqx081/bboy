@@ -1,7 +1,7 @@
 //
 // Utility methods for dealing with file paths.
-#ifndef KUDU_UTIL_PATH_UTIL_H
-#define KUDU_UTIL_PATH_UTIL_H
+#ifndef BBOY_UTIL_PATH_UTIL_H
+#define BBOY_UTIL_PATH_UTIL_H
 
 #include <string>
 #include <vector>
@@ -30,4 +30,4 @@ std::string DirName(const std::string& path);
 std::string BaseName(const std::string& path);
 
 } // namespace bb
-#endif /* KUDU_UTIL_PATH_UTIL_H */
+#endif /* BBOY_UTIL_PATH_UTIL_H */

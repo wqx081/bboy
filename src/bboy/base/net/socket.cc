@@ -42,6 +42,12 @@ void Socket::Reset(int fd) {
   fd_ = fd;
 }
 
+int Socket::Release() {
+  int fd = fd_;
+  fd_ = -1;
+  return fd;
+}
+
 Socket::~Socket() {
   ignore_result(Close());
 }

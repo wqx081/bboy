@@ -1,0 +1,55 @@
+
+CXXFLAGS += -I$(SRC_DIR)
+CXXFLAGS += -std=c++11 -Wall -Werror -Wno-sign-compare -Wno-deprecated -g -c -o
+
+CXX=g++
+
+CPP_SOURCES :=  \
+	rpc_header.pb.cc \
+	acceptor_pool.cc \
+
+CPP_OBJECTS := $(CPP_SOURCES:.cc=.o)
+
+STATIC_LIB=librpc.a
+
+LIBS += $(STATIC_LIB)
+
+# Protobuf
+PROTO_SRC := $(wildcard *.proto)
+PROTO_OBJ := $(PROTO_SRC:.proto=.pb.o)
+PROTO_GEN := $(PROTO_SRC:.proto=.pb.cc) $(PROTO_SRC:.proto=.pb.h)
+
+
+#all: $(CPP_OBJECTS) protoc-gen-krpc $(LIBS)
+all: $(CPP_OBJECTS)  $(LIBS)
+
+$(STATIC_LIB): $(CPP_OBJECTS)
+	@echo "  [LINK] $@"
+	@ar crs $@ $(CPP_OBJECTS)
+
+# 防止自动删除 *.pb.cc
+.PRECIOUS: $(PROTO_GEN)
+
+.cc.o:
+	@echo "  [CXX]  $@"
+	@$(CXX) $(CXXFLAGS) $@ $<
+
+%.pb.cc: %.proto
+	@echo "  [GEN]  $@"
+	@protoc  --cpp_out $(SRC_DIR) --proto_path $(SRC_DIR) --proto_path /usr/local/include $(CURDIR)/$<
+
+protoc-gen-krpc: protoc-gen-krpc.o
+	@echo "  [LINK] $@"
+	@$(CXX) -o $@ protoc-gen-krpc.o rpc_header.pb.o $(SRC_DIR)/base/core/libcore.a \
+	$(SRC_DIR)/base/util/libutil.a \
+	-lglog -lgflags -L/usr/local/lib -lprotobuf -lprotoc -lpthread
+
+protoc-gen-krpc.o: protoc-gen-krpc.cc
+	@echo "  [CXX]  $@"
+	@$(CXX) $(CXXFLAGS) $@ $<
+
+
+clean:
+	@rm -fr $(CPP_OBJECTS)
+	@rm -fr $(LIBS)
+	@rm -fr *.pb.h *.pb.cc *.o

@@ -1,5 +1,5 @@
-#ifndef KUDU_UTIL_THREADLOCAL_H_
-#define KUDU_UTIL_THREADLOCAL_H_
+#ifndef BBOY_UTIL_THREADLOCAL_H_
+#define BBOY_UTIL_THREADLOCAL_H_
 
 // Block-scoped static thread local implementation.
 //
@@ -124,4 +124,4 @@ static void Destroy(void* t) {
 } // namespace threadlocal
 } // namespace bb
 
-#endif // KUDU_UTIL_THREADLOCAL_H_
+#endif // BBOY_UTIL_THREADLOCAL_H_

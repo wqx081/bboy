@@ -1,5 +1,5 @@
-#ifndef KUDU_UTIL_JSONREADER_H_
-#define KUDU_UTIL_JSONREADER_H_
+#ifndef BBOY_UTIL_JSONREADER_H_
+#define BBOY_UTIL_JSONREADER_H_
 
 #include <stdint.h>
 #include <string>
@@ -71,4 +71,4 @@ class JsonReader {
 
 } // namespace kudu
 
-#endif // KUDU_UTIL_JSONREADER_H_
+#endif // BBOY_UTIL_JSONREADER_H_

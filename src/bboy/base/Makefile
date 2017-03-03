@@ -18,6 +18,12 @@ CPP_SOURCES :=  \
 	env.cc \
 	env_posix.cc \
 	user.cc \
+	random_util.cc \
+	debug_util.cc \
+	mem_tracker.cc \
+	\
+	\
+	process/subprocess.cc \
 	\
 	json/jsonreader.cc \
 	json/jsonwriter.cc \
@@ -40,6 +46,7 @@ CPP_SOURCES :=  \
 	sync/rwc_lock.cc \
 	sync/barrier.cc \
 	sync/countdown_latch.cc \
+	sync/once.cc \
 
 CPP_OBJECTS := $(CPP_SOURCES:.cc=.o)
 

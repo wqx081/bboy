@@ -1,5 +1,5 @@
-#ifndef KUDU_UTIL_PROMISE_H
-#define KUDU_UTIL_PROMISE_H
+#ifndef BBOY_UTIL_PROMISE_H
+#define BBOY_UTIL_PROMISE_H
 
 #include "bboy/gbase/macros.h"
 #include "bboy/base/sync/countdown_latch.h"
@@ -60,4 +60,4 @@ class Promise {
 };
 
 } // namespace bb
-#endif /* KUDU_UTIL_PROMISE_H */
+#endif /* BBOY_UTIL_PROMISE_H */

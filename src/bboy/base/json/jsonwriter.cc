@@ -201,7 +201,7 @@ void JsonWriter::ProtobufField(const Message& pb, const FieldDescriptor* field) 
       break;
     case FieldDescriptor::CPPTYPE_STRING:
 #if 0 // TODO(wqx):
-      String(KUDU_MAYBE_REDACT_IF(field->options().GetExtension(REDACT),
+      String(BBOY_MAYBE_REDACT_IF(field->options().GetExtension(REDACT),
                                   reflection->GetString(pb, field)));
 #endif
       String(reflection->GetString(pb, field));
@@ -243,7 +243,7 @@ void JsonWriter::ProtobufRepeatedField(const Message& pb, const FieldDescriptor*
       break;
     case FieldDescriptor::CPPTYPE_STRING:
 #if 0 //TODO(wqx):
-      String(KUDU_MAYBE_REDACT_IF(field->options().GetExtension(REDACT),
+      String(BBOY_MAYBE_REDACT_IF(field->options().GetExtension(REDACT),
                                   reflection->GetRepeatedString(pb, field, index)));
 #endif
       String(reflection->GetRepeatedString(pb, field, index));
