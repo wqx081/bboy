@@ -6,4 +6,4 @@
 3) Sockaddr/Socket
 4) Boost::optional<> / boost::intrusive_list
 5) CountDownLatch
-
+6) Histogram/Trace
